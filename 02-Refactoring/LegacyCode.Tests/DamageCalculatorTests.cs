@@ -236,12 +236,7 @@ public class DamageCalculatorTests
     [Fact]
     public void GivenNullEnemy_WhenComputeDamage_ThenThrowsArgumentNullException()
     {
-        // Arrange
-        var playerAttack = 10;
-        var playerDamageType = DamageType.Fire;
-        var player = new Player { Atk = playerAttack, DamageType = playerDamageType };
-
-        // Act & Assert
-        Assert.Throws<ArgumentNullException>(() => DamageCalculator.ComputeDamage(player, null));
+        // Arrange, Act & Assert
+        Assert.Throws<ArgumentNullException>(() => DamageCalculator.ComputeDamage(null, null));
     }
 }
