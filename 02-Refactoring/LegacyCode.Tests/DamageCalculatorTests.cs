@@ -200,6 +200,26 @@ public class DamageCalculatorTests
     }
 
     [Fact]
+    public void GivenDamageLessThanLifePointsAndEnemyIsVulnerable_WhenComputeDamage_ThenReturnsDamageFromVulnerability()
+    {
+        // Arrange
+        var playerAttack = 5;
+        var enemyDefense = 8;
+        var enemyLifePoints = 10;
+        var enemyIsVulnerable = true;
+
+        var player = new Player { Atk = playerAttack };
+        var enemy = new Enemy { Defense = enemyDefense, IsVulnerable = enemyIsVulnerable, LifePoints = enemyLifePoints };
+
+        // Act
+        var result = DamageCalculator.ComputeDamage(player, enemy);
+
+        // Assert
+        var expectedValue = 5;
+        Assert.Equal(expectedValue, result);
+    }
+
+    [Fact]
     public void GivenDamageBelowZeroAfterAllModifiers_WhenComputeDamage_ThenReturnsZero()
     {
         // Arrange
