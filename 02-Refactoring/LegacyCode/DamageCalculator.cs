@@ -1,9 +1,9 @@
-﻿
+
 using LegacyCode;
 
 public class DamageCalculator
 {
-    public static int ComputeDamage(Player a, Enemy e)
+    public static int ComputeDamage(Player? a, Enemy? e)
     {
         if (a == null || e == null)
         {
