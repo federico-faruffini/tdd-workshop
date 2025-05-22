@@ -28,6 +28,9 @@ dotnet test 02-Refactoring/LegacyCode.Tests/LegacyCode.Tests.csproj
 dotnet test 03-BugFix/BuggyLibrary.Tests/BuggyLibrary.Tests.csproj
 dotnet test 04-PromoCalculator/PromoCalculator.Tests/PromoCalculator.Tests.csproj
 ```
+
+For this workshop we will use .NET with XUnit as a testing framework. See the [Section](#unit-testing-in-xunit) to learn more on XUnit and code conventions we will use.
+
 ### 1 - Email validator
 We want to create our own dummy email validator. These are the requirements:
 - the character "@" appears exactly once in the string
@@ -45,7 +48,7 @@ The second project has some working code, which is not readable enough. Since we
 ### 3 - Bugfix with TDD
 My testers told me there is a bug in the crafting system of my game: let's use TDD to fix it!
 
-## 4 Promo calculator
+### 4 Promo calculator
 Now, for a more realistic scenario with many classes and conditional checks, let's implement a promo calculator for an e-commerce website.
 
 
@@ -74,4 +77,38 @@ These are the requirements:
 - combination of rules, max 20€
 
 
+## Unit Testing in XUnit
+### Unit Testing in XUnit a
+```cs
+[Fact]
+public void Add_TwoNumbers_ReturnsCorrectResult()
+{
+    var calculator = new Calculator();
 
+    var result = calculator.Add(2, 3);
+
+    Assert.Equal(5, result);
+}
+```
+
+```cs
+[Theory]
+[InlineData(2, 3, 5)]
+[InlineData(-1, 1, 0)]
+[InlineData(0, 0, 0)]
+public void Add_MultipleInputs_ReturnsExpectedResult(int a, int b, int expected)
+{
+    var calculator = new Calculator();
+
+    var result = calculator.Add(a, b);
+
+    Assert.Equal(expected, result);
+}
+```
+
+```cs
+Assert.Equal(expected, actual)
+Assert.True(condition)
+Assert.False(condition)
+Assert.NotNull(obj)
+```
