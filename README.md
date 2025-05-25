@@ -36,18 +36,13 @@ dotnet test 05-EmailValidator/EmailValidator.Tests/EmailValidator.Tests.csproj
 For this workshop, we will use .NET with XUnit as the testing framework. See the [Unit Testing Notes](#unit-testing-notes) section to learn more about XUnit and the code conventions we will use.
 
 ---
-### 1. Email Validator
+### 1. Word Counter
+Let's start with a very easy example, a word counter. 
 
-We want to create our own dummy email validator. These are the requirements:
-
-- The character `@` appears **exactly once** in the string
-- The string **doesn't contain** any of these special chars: `, ; : !`
-- Username is valid (**at least one char before the @ sign**)
-- Domain is valid:
-  - **At least one dot** after `@`
-  - **At least one char after @**, then dot, then **at least another char**
-
-Let's use TDD to write the code!
+Given an input string, we want our piece of code to:
+- return 0 if the string is null or empty
+- return the number of space-separated words in the string
+- treat multiple spaces between words as a single separator 
 
 ---
 
@@ -75,6 +70,33 @@ Now, for a more realistic scenario with many classes and conditional checks, let
 - 3x2 in category "shoes"
 - A combination of promotions will always gave max 20€ discount
 - The total can't be negative
+
+---
+
+### 5. Email Validator - TDD with AI tools 
+Let's use TDD with an AI programming tool, such as GitHub Copilot. 
+
+Here is a list of the requirements for our custom email validator.
+A valid email address must:
+- Contain exactly one @ symbol
+- Have a non-empty local part (before the @):
+  - May contain: letters, digits, periods (.), underscores (_), hyphens (-)
+  - Cannot start or end with a dot
+  - Cannot have consecutive dots
+- Have a non-empty domain part (after the @):
+  - Must contain at least one dot (.)
+  - Each domain label (e.g., example, com) must:
+    - Start and end with a letter or digit
+    - Only include letters, digits, or hyphens (-)
+  - TLD (top-level domain) must be at least 2 characters long (e.g., .com, .net).
+- Be case-insensitive for validation purposes
+- Trim surrounding whitespace — spaces before/after should not invalidate otherwise valid emails
+- Return false if the input:
+  - is null or empty
+  - contains spaces inside the email
+  - is missing either part (e.g., @domain.com, user@)
+
+Let's use TDD with our AI assistance to write the code!
 
 ## Unit Testing Notes
 
