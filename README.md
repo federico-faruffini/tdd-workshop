@@ -26,10 +26,11 @@ dotnet test
 
 To run only the tests from the project you are working on:
 ```sh
-dotnet test 01-EmailValidator/EmailValidator.Tests/EmailValidator.Tests.csproj
+dotnet test 01-WordCounter/WordCounterTests/WordCounter.Tests.csproj
 dotnet test 02-Refactoring/LegacyCode.Tests/LegacyCode.Tests.csproj
 dotnet test 03-BugFix/BuggyLibrary.Tests/BuggyLibrary.Tests.csproj
 dotnet test 04-PromoCalculator/PromoCalculator.Tests/PromoCalculator.Tests.csproj
+dotnet test 05-EmailValidator/EmailValidator.Tests/EmailValidator.Tests.csproj
 ```
 
 For this workshop, we will use .NET with XUnit as the testing framework. See the [Unit Testing Notes](#unit-testing-notes) section to learn more about XUnit and the code conventions we will use.

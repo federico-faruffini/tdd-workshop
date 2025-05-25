@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-EmailValidator", "01-EmailValidator", "{3562D5BD-1D79-4BF8-9D81-69DE3B5FD6CA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05-EmailValidator", "05-EmailValidator", "{3562D5BD-1D79-4BF8-9D81-69DE3B5FD6CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailValidator", "01-EmailValidator\EmailValidator\EmailValidator.csproj", "{251A7F8D-6DB5-49B0-8A4D-B62789E8C06A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailValidator", "05-EmailValidator\EmailValidator\EmailValidator.csproj", "{251A7F8D-6DB5-49B0-8A4D-B62789E8C06A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailValidator.Tests", "01-EmailValidator\EmailValidator.Tests\EmailValidator.Tests.csproj", "{37D85F8C-C485-4A35-83E0-B2D1CA8E47E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailValidator.Tests", "05-EmailValidator\EmailValidator.Tests\EmailValidator.Tests.csproj", "{37D85F8C-C485-4A35-83E0-B2D1CA8E47E9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Refactoring", "02-Refactoring", "{6CC5878A-0E03-42A2-960C-CEC2217C861D}"
 EndProject
