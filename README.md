@@ -56,6 +56,8 @@ The second project has some working code, which is not readable enough. Since we
 
 My testers told me there is a bug in the crafting system of my game: let's use TDD to fix it!
 
+The description of the bug that my testers provided is: *"When I have 2 wood and some other material, which is not stone, if I try to craft an axe, instead of not doing anything it removes the 2 wood from the inventory."*
+
 ---
 
 ### 4. Promo Calculator
