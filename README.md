@@ -4,6 +4,27 @@ This repository is used in a workshop for Master's students of Computer Engineer
 
 The goal of the workshop is to teach Test-Driven Development (TDD) through hands-on experience using C# as the programming language.
 
+## Table of Contents
+
+1. [Overview](#tdd-workshop)
+2. [Setup](#setup)
+3. [Exercises](#exercises)  
+   - [Word Counter](#1-word-counter)  
+   - [Refactoring with Unit Tests / TDD](#2-refactoring-with-unit-tests--tdd)  
+   - [Bugfix with TDD](#3-bugfix-with-tdd)  
+   - [Promo Calculator](#4-promo-calculator)  
+   - [Email Validator - TDD with AI tools](#5-email-validator---tdd-with-ai-tools)
+4. [Unit Testing Notes](#unit-testing-notes)  
+   - [Unit Testing in XUnit](#unit-testing-in-xunit)  
+     - [Fact](#fact)  
+     - [Theory](#theory)  
+     - [Assertions](#assertions)  
+   - [Unit Testing Conventions](#unit-testing-conventions)  
+     - [Given-When-Then](#given-when-then)  
+     - [Arrange-Act-Assert](#arrange-act-assert)
+
+
+
 ## Setup
 
 1. [Download .NET](https://dotnet.microsoft.com/en-us/download) (the latest version is fine)
