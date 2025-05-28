@@ -8,6 +8,7 @@ The goal of the workshop is to teach Test-Driven Development (TDD) through hands
 
 1. [Overview](#tdd-workshop)
 2. [Setup](#setup)
+   - [Troubleshooting](#troubleshooting)
 3. [Exercises](#exercises)  
    - [Word Counter](#1-word-counter)  
    - [Refactoring with Unit Tests / TDD](#2-refactoring-with-unit-tests--tdd)  
@@ -27,12 +28,26 @@ The goal of the workshop is to teach Test-Driven Development (TDD) through hands
 
 ## Setup
 
-1. [Download .NET](https://dotnet.microsoft.com/en-us/download) (the latest version is fine)
+1. [Download .NET 8](https://dotnet.microsoft.com/it-it/download/dotnet/8.0) (the latest version is fine)
 2. If you don't have it already, [download Visual Studio Code](https://code.visualstudio.com/)
 3. Install the [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit) extension in VS Code
 4. Clone this repository and open it in VS Code
 5. Open a terminal in the repository
 6. Run `dotnet build`. If you see "Build succeeded", you are good to go!
+
+### Troubleshooting
+If you have any trouble during the installation, try to follow these steps:
+- make sure you are connected to the internet
+- run `dotnet --list-sdks`. If you don't see any results, reinstall .NET
+- if you see a list of SDKs in the output of the last command, run `dotnet restore`
+- if the output states you are missing a source, run `dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org`
+- after this, run the following
+  ```
+  dotnet clean
+  dotnet restore
+  dotnet build
+  ```
+- if you still experience issues, try installing another .NET version.
 
 ## Exercises
 
