@@ -11,7 +11,7 @@ namespace PromoCalculator.DiscountRules
 
         public bool IsApplicable(Cart cart)
         {
-            if (cart.Total < discountValue)
+            if (cart.TotalBeforeDiscounts < discountValue)
             {
                 return false;
             }

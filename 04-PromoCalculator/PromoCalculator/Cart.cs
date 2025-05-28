@@ -11,5 +11,5 @@ public class Cart
 
     public IReadOnlyList<CartItem> Items => _items;
 
-    public decimal Total => _items.Sum(item => item.Total);
+    public decimal TotalBeforeDiscounts => _items.Sum(item => item.Total);
 }
