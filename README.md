@@ -103,11 +103,16 @@ Now, for a more realistic scenario with many classes and conditional checks, let
 **Requirements:**
 - If there is no promo applied, the final price is the total of the cart
 - If I apply a "two euro coupon for tshirts", it should remove 2€ from the cart if the cart contains a tshirt
-- 10% off if the total is > 100€
+- 10% off if the total is > 100€. This promo is applied after all other promos
 - You can't apply discounts to products of type "Gift Card"
 - 3x2 in category "shoes"
 - A combination of promotions will always gave max 20€ discount
 - The total can't be negative
+
+Note: to check if an object is an instance of a class, use:
+```cs
+myObject is MyClass
+```
 
 ---
 
