@@ -16,7 +16,7 @@ namespace PromoCalculator.DiscountRules
                 return false;
             }
 
-            return cart.Items.Any(x => x.Product.ProductType == ProductType.TShirt);
+            return cart.Items.Any(x => x.ProductType == ProductType.TShirt);
         }
     }
 }
