@@ -9,6 +9,10 @@ public class DiscountCalculator
         _rules = rules.ToList();
     }
 
+    public DiscountCalculator() : this(Enumerable.Empty<IDiscountRule>())
+    {
+    }
+
     public decimal CalculateTotalWithDiscounts(Cart cart)
     {
         throw new NotImplementedException();
