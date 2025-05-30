@@ -33,9 +33,12 @@ public class CraftingSystem
             {
                 return false;
             }
-            
-            inventory.ConsumeResource(resource, amount); 
         }
+
+        foreach (var (resource, amount) in recipe)
+        {
+            inventory.ConsumeResource(resource, amount); 
+        }   
 
         return true;
     }

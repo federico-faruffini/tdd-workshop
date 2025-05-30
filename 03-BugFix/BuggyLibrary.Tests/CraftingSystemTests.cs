@@ -129,4 +129,24 @@ public class CraftingSystemTests
         // Act & Assert
         Assert.Throws<InvalidOperationException>(() => inventory.ConsumeResource("stone", amountToConsume));
     }
+
+    [Fact]
+    public void GivenNotEnoughResourcesForAxe_WhenCraftIsCalled_ThenReturnsFalseAndDoesntConsumeResources()
+    {
+        // Arrange
+        var inventory = new Inventory();
+        var initialWood = 2;
+        var initialGold = 1;
+        inventory.AddResource("wood", initialWood);
+        inventory.AddResource("gold", initialGold);
+        var craftingSystem = new CraftingSystem();
+
+        // Act
+        var result = craftingSystem.Craft("axe", inventory);
+
+        // Assert
+        Assert.False(result);
+        Assert.Equal(initialWood, inventory.GetAmount("wood"));
+        Assert.Equal(initialGold, inventory.GetAmount("gold"));
+    }
 }
