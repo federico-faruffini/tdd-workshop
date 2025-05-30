@@ -13,7 +13,7 @@ public class DamageCalculatorTests
         var playerDamageType = DamageType.Basic;
         var enemyLifePoints = 20;
 
-        var player = new Player { Atk = playerAttack, DamageType = playerDamageType };
+        var player = new Player { Attack = playerAttack, DamageType = playerDamageType };
         var enemy = new Enemy { Defense = enemyDefense, LifePoints = enemyLifePoints };
 
         // Act
@@ -33,7 +33,7 @@ public class DamageCalculatorTests
         var playerDamageType = DamageType.Basic;
         var enemyLifePoints = 20;
 
-        var player = new Player { Atk = playerAttack, DamageType = playerDamageType };
+        var player = new Player { Attack = playerAttack, DamageType = playerDamageType };
         var enemy = new Enemy { Defense = enemyDefense, LifePoints = enemyLifePoints };
 
         // Act
@@ -54,7 +54,7 @@ public class DamageCalculatorTests
         var playerDamageType = DamageType.Basic;
         var enemyLifePoints = 20;
 
-        var player = new Player { Atk = playerAttack, Bonus = playerBonus, DamageType = playerDamageType };
+        var player = new Player { Attack = playerAttack, Bonus = playerBonus, DamageType = playerDamageType };
         var enemy = new Enemy { Defense = enemyDefense, LifePoints = enemyLifePoints };
 
         // Act
@@ -76,7 +76,7 @@ public class DamageCalculatorTests
         var playerDamageType = DamageType.Basic;
         var enemyLifePoints = 20;
 
-        var player = new Player { Atk = playerAttack, Bonus = playerBonus, DamageType = playerDamageType };
+        var player = new Player { Attack = playerAttack, Bonus = playerBonus, DamageType = playerDamageType };
         var enemy = new Enemy { Defense = enemyDefense, IsVulnerable = enemyIsVulnerable, LifePoints = enemyLifePoints };
 
         // Act
@@ -97,7 +97,7 @@ public class DamageCalculatorTests
         var enemyResistance = DamageType.Fire;
         var enemyLifePoints = 20;
 
-        var player = new Player { Atk = playerAttack, DamageType = playerDamageType };
+        var player = new Player { Attack = playerAttack, DamageType = playerDamageType };
         var enemy = new Enemy { Defense = enemyDefense, ResistanceToType = enemyResistance, LifePoints = enemyLifePoints };
 
         // Act
@@ -118,7 +118,7 @@ public class DamageCalculatorTests
         var enemyResistance = DamageType.Basic;
         var enemyLifePoints = 20;
 
-        var player = new Player { Atk = playerAttack, DamageType = playerDamageType };
+        var player = new Player { Attack = playerAttack, DamageType = playerDamageType };
         var enemy = new Enemy { Defense = enemyDefense, ResistanceToType = enemyResistance, LifePoints = enemyLifePoints };
 
         // Act
@@ -139,7 +139,7 @@ public class DamageCalculatorTests
         var enemyResistance = DamageType.Fire;
         var enemyLifePoints = 20;
 
-        var player = new Player { Atk = playerAttack, DamageType = playerDamageType };
+        var player = new Player { Attack = playerAttack, DamageType = playerDamageType };
         var enemy = new Enemy { Defense = enemyDefense, ResistanceToType = enemyResistance, LifePoints = enemyLifePoints };
 
         // Act
@@ -162,7 +162,7 @@ public class DamageCalculatorTests
         var enemyResistance = DamageType.Fire;
         var enemyLifePoints = 20;
 
-        var player = new Player { Atk = playerAttack, Bonus = playerBonus, DamageType = playerDamageType };
+        var player = new Player { Attack = playerAttack, Bonus = playerBonus, DamageType = playerDamageType };
         var enemy = new Enemy
         {
             Defense = enemyDefense,
@@ -188,7 +188,7 @@ public class DamageCalculatorTests
         var playerDamageType = DamageType.Basic;
         var enemyLifePoints = 20;
 
-        var player = new Player { Atk = playerAttack, DamageType = playerDamageType };
+        var player = new Player { Attack = playerAttack, DamageType = playerDamageType };
         var enemy = new Enemy { Defense = enemyDefense, LifePoints = enemyLifePoints };
 
         // Act
@@ -208,7 +208,7 @@ public class DamageCalculatorTests
         var enemyLifePoints = 10;
         var enemyIsVulnerable = true;
 
-        var player = new Player { Atk = playerAttack };
+        var player = new Player { Attack = playerAttack };
         var enemy = new Enemy { Defense = enemyDefense, IsVulnerable = enemyIsVulnerable, LifePoints = enemyLifePoints };
 
         // Act
@@ -230,7 +230,7 @@ public class DamageCalculatorTests
         var enemyResistance = DamageType.Frost;
         var enemyLifePoints = 20;
 
-        var player = new Player { Atk = playerAttack, Bonus = playerBonus, DamageType = playerDamageType };
+        var player = new Player { Attack = playerAttack, Bonus = playerBonus, DamageType = playerDamageType };
         var enemy = new Enemy { Defense = enemyDefense, ResistanceToType = enemyResistance, LifePoints = enemyLifePoints };
 
         // Act
@@ -257,7 +257,7 @@ public class DamageCalculatorTests
     public void GivenNullEnemy_WhenComputeDamage_ThenThrowsArgumentNullException()
     {
         // Arrange
-        var player = new Player { Atk = 5 };
+        var player = new Player { Attack = 5 };
 
         // Act & Assert
         Assert.Throws<ArgumentNullException>(() => DamageCalculator.ComputeDamage(player, null));

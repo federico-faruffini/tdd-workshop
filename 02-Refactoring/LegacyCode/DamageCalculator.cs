@@ -3,43 +3,56 @@ using LegacyCode;
 
 public class DamageCalculator
 {
-    public static int ComputeDamage(Player? a, Enemy? e)
+    private const int vulnerabilityDamage = 5;
+
+    public static int ComputeDamage(Player? player, Enemy? enemy)
     {
-        if (a == null || e == null)
+        if (player == null || enemy == null)
         {
-            throw new ArgumentNullException(nameof(a));
+            throw new ArgumentNullException(nameof(player));
         }
 
-        int d = a.Atk + a.Bonus - e.Defense;
+        int totalDamage = player.Attack + player.Bonus - enemy.Defense;
 
-        if (d < 0)
-        {
-            d = 0;
-        }
+        totalDamage = ResetDamageIfNegative(totalDamage);
 
-        if (e.IsVulnerable)
-        {
-            d += 5;
-        }
+        totalDamage = ApplyVulnerabilityDamage(enemy, totalDamage);
 
-        if (a.DamageType != DamageType.Basic)
+        if (player.DamageType != DamageType.Basic)
         {
-            if (a.DamageType == e.ResistanceToType)
+            if (player.DamageType == enemy.ResistanceToType)
             {
-                d -= 3;
+                totalDamage -= 3;
             }
         }
 
-        if (d < 0)
+        totalDamage = ResetDamageIfNegative(totalDamage);
+
+        if (totalDamage > enemy.LifePoints)
         {
-            d = 0;
+            totalDamage = enemy.LifePoints;
         }
 
-        if (d > e.LifePoints)
+        return totalDamage;
+    }
+
+    private static int ResetDamageIfNegative(int totalDamage)
+    {
+        if (totalDamage < 0)
         {
-            d = e.LifePoints;
+            totalDamage = 0;
         }
 
-        return d;
+        return totalDamage;
+    }
+
+    private static int ApplyVulnerabilityDamage(Enemy enemy, int totalDamage)
+    {
+        if (enemy.IsVulnerable)
+        {
+            totalDamage += vulnerabilityDamage;
+        }
+
+        return totalDamage;
     }
 }
